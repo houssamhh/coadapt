@@ -1,0 +1,13 @@
+scenario,frame_idx,frame_name,ego_cav,com_range_m,bandwidth_mbps,all_cavs,in_range_cavs,selected_cavs,n_selected,fusion_method,reason,llm_response_time_s
+2021_08_20_21_10_24,50,000169,2014,45.0,5.49,1996|2005|2014,1996|2005|2014,2014|1996,2,late,Bandwidth limits to late fusion; choose one east CAV for complementary coverage without redundancy.,37.34
+2021_08_22_07_52_02,0,000071,3477,45.0,51.99,3477|3486|3495|3504|3513,3477|3486|3495|3504|3513,3477|3513|3495,3,late,"Diverse east/west coverage, late fusion fits 52 Mbps bandwidth.",41.69
+2021_08_22_21_41_24,0,000069,886,45.0,5.43,886|895|904,886|895|904,886|895|904,3,late,Late fusion fits bandwidth; both in‑range CAVs add modest complementary data despite similar direction.,45.5
+2021_08_22_21_41_24,50,000169,904,45.0,5.44,886|895|904,886|895|904,904|886|895,3,late,Maintain complementary coverage; bandwidth ample for low‑cost late fusion,32.38
+2021_08_23_16_06_26,50,000169,243,45.0,21.99,243|252|261,243|252|261,243|252|261,3,late,Diverse directional coverage under strict bandwidth permits only low‑cost late fusion.,39.85
+2021_08_23_16_06_26,100,000269,243,45.0,21.66,243|252|261,243|252|261,243|252|261,3,late,Late fusion fits the 21.7 Mbps link while preserving diverse SE/E coverage with both in‑range CAVs.,50.39
+2021_08_23_17_22_47,50,000169,583,45.0,22.54,574|583|592,574|583|592,583|592|574,3,late,Late fusion stays within bandwidth; include both in‑range CAVs for maximal coverage.,37.96
+2021_08_23_21_07_10,50,000169,160,45.0,5.62,160|169|178,160|169|178,160|169|178,3,late,Late fusion fits bandwidth and adds diverse directional coverage.,31.46
+2021_08_23_21_07_10,100,000269,169,45.0,5.65,160|169|178,160|169|178,169|178|160,3,late,Bandwidth limited to late fusion; previous selection still provides needed coverage.,35.64
+2021_08_23_21_47_19,50,000169,225,45.0,5.59,225|234|243,225|234|243,225|234|243,3,late,Complementary views fit within tight bandwidth using low‑cost late fusion.,37.46
+2021_08_24_07_45_41,50,000170,121,45.0,56.09,121|130|139|148,121|139|148,121|139|148,3,late,"Diverse coverage under strict bandwidth, only late fusion fits.",40.73
+2021_08_24_11_37_54,100,000269,319,45.0,56.31,301|310|319,301|310|319,319|301,2,late,Diverse enough coverage with minimal bandwidth using late fusion.,43.45

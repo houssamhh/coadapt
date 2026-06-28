@@ -1,0 +1,40 @@
+scenario,frame_idx,frame_name,ego_cav,com_range_m,bandwidth_mbps,all_cavs,in_range_cavs,selected_cavs,n_selected,fusion_method,reason,llm_response_time_s
+2021_08_18_19_11_02,0,000070,1188,70.0,5.43,1188|1197|1206|1215,1188|1197|1206|1215,1188,1,late,,42.91
+2021_08_18_19_11_02,50,000170,1188,70.0,5.56,1188|1197|1206|1215,1188|1197|1206|1215,1188,1,late,Low available bandwidth and no other CAVs in range.,36.29
+2021_08_18_19_11_02,100,000270,1188,70.0,5.47,1188|1197|1206|1215,1188|1197|1206|1215,1188,1,late,Low available bandwidth and previous decision effectiveness.,31.08
+2021_08_20_20_39_00,50,000169,1234,45.0,5.48,1234|1243|1252,1234|1243|1252,1234,1,late,Only ego vehicle is within communication range.,15.99
+2021_08_20_20_39_00,100,000269,1234,45.0,5.34,1234|1243|1252,1234|1243|1252,1234,1,late,Continuity with previous decision due to no change in scene geometry or network state.,31.38
+2021_08_21_09_09_41,0,000070,476,45.0,53.28,476|485|494|503,476|494|503,476|503|494,3,intermediate,Diverse coverage under medium congestion.,42.71
+2021_08_21_09_09_41,150,000370,485,45.0,54.32,476|485|494|503,476|485|494,485|476,2,intermediate,Redundancy avoidance under medium congestion.,37.43
+2021_08_21_22_21_37,100,000269,2987,45.0,5.36,2987|2996|3005,2987|2996|3005,2987|2996,2,intermediate,Balancing accuracy and bandwidth with a redundant CAV.,41.58
+2021_08_22_06_43_37,50,000170,3152,45.0,56.76,3152|3161|3170|3179,3152|3161|3170|3179,3152,1,late,Only ego vehicle is within communication range.,33.36
+2021_08_22_06_43_37,100,000270,3152,45.0,53.86,3152|3161|3170|3179,3152|3161|3170|3179,3152,1,late,Only ego vehicle is within communication range.,47.87
+2021_08_22_06_43_37,150,000370,3152,45.0,54.67,3152|3161|3170|3179,3152|3161|3170|3179,3152,1,late,Only ego vehicle is within communication range.,24.74
+2021_08_22_07_24_12,0,000070,3314,45.0,54.56,3314|3323|3332|3341,3314|3323|3332|3341,3314,1,intermediate,No other CAVs in range.,30.78
+2021_08_22_07_24_12,50,000170,3314,45.0,53.99,3314|3323|3332|3341,3314|3323|3332|3341,3314,1,late,No other CAVs in range to contribute to fusion.,69.68
+2021_08_22_07_24_12,100,000270,3314,45.0,52.4,3314|3323|3332|3341,3314|3332|3341,3314,1,late,No additional CAVs in range to justify change in strategy.,42.14
+2021_08_22_07_24_12,150,000370,3314,45.0,56.75,3314|3323|3332|3341,3314|3332|3341,3314,1,late,Bandwidth conservation with minimal addition due to range and bandwidth constraints.,52.52
+2021_08_22_10_10_40,50,000169,7655,45.0,54.95,7655|7664|7673,7655|7664|7673,7655,1,intermediate,Ego only and intermediate for balance.,24.88
+2021_08_22_10_46_58,0,000069,3643,45.0,54.85,3643|3652|3661,3643|3652|3661,3643,1,late,,28.6
+2021_08_22_10_46_58,50,000169,3661,45.0,55.95,3643|3652|3661,3643|3652|3661,3661|3643,2,late,Continuity with previous decision and sufficient spatial coverage with minimal bandwidth usage.,42.49
+2021_08_22_10_46_58,100,000269,3661,45.0,55.91,3643|3652|3661,3643|3652|3661,3661|3643,2,late,Continuity with previous decision and sufficient spatial coverage with minimal bandwidth usage.,34.13
+2021_08_22_22_30_58,50,000169,1241,45.0,5.71,1241|1250|1259,1241|1250|1259,1241,1,late,,22.71
+2021_08_23_11_22_46,50,000169,6712,45.0,53.19,6712|6721|6730,6712|6721|6730,6712|6721,2,intermediate,Balancing accuracy and bandwidth cost with complementary views.,42.47
+2021_08_23_11_22_46,100,000269,6712,45.0,57.5,6712|6721|6730,6712|6721|6730,6712|6721|6730,3,intermediate,Balancing accuracy and bandwidth with complementary views from in-range CAVs.,31.75
+2021_08_23_11_22_46,150,000369,6712,45.0,55.33,6712|6721|6730,6712|6721|6730,6712|6721|6730,3,intermediate,Continuity with previous decision due to minimal scene changes and balanced bandwidth usage.,39.78
+2021_08_23_17_07_55,50,000169,407,45.0,21.94,407|416|425,407|416|425,407|425,2,intermediate,Moderate bandwidth usage with diverse coverage.,32.32
+2021_08_23_22_31_01,0,000070,939,45.0,5.66,939|948|957|966,939|948|957,939|957,2,intermediate,Moderate bandwidth and diverse coverage.,32.49
+2021_08_23_22_31_01,50,000170,939,45.0,5.46,939|948|957|966,939|948|957|966,939|957,2,intermediate,Consistency with previous decision and moderate bandwidth.,33.62
+2021_08_23_23_08_17,50,000169,47,45.0,5.74,47|56|65,47|56|65,47|65,2,intermediate,Balancing accuracy and bandwidth with complementary views.,64.47
+2021_08_24_21_29_28,0,000069,4796,45.0,5.28,4796|4805|4814,4796|4805|4814,4796|4805|4814,3,intermediate,Diverse coverage with balanced accuracy and bandwidth under medium congestion.,41.91
+2021_08_24_21_29_28,50,000169,4814,45.0,5.74,4796|4805|4814,4796|4805|4814,4814|4796|4805,3,intermediate,Maintaining diverse coverage with balanced accuracy and bandwidth under medium congestion.,23.83
+2021_08_24_21_29_28,100,000269,4814,45.0,5.69,4796|4805|4814,4796|4805|4814,4814|4796|4805,3,intermediate,Maintaining diverse coverage with balanced accuracy and bandwidth under medium congestion.,57.8
+2021_09_09_13_20_58,100,000270,1244,45.0,21.95,1244|1252|1260|1268,1244|1252|1260,1244|1260|1252,3,intermediate,Balances perception accuracy and bandwidth usage with diverse coverage.,48.77
+2021_09_09_13_20_58,150,000370,1260,45.0,21.97,1244|1252|1260|1268,1244|1252|1260,1260|1244|1252,3,intermediate,Maintaining previous selection for continuity and balanced performance.,55.96
+2021_09_09_23_21_21,200,000471,6889,45.0,5.17,6853|6862|6871|6880|6889,6853|6862|6871|6889,6889|6871|6853,3,intermediate,Diverse coverage under medium congestion.,49.53
+2021_09_09_23_21_21,250,000571,6862,45.0,5.51,6853|6862|6871|6880|6889,6853|6862|6871|6889,6862|6889|6871|6853,4,intermediate,Consistency with previous decision due to minimal changes in scene and network.,35.59
+2021_09_09_23_21_21,300,000671,6862,45.0,5.36,6853|6862|6871|6880|6889,6853|6862|6871|6889,6862|6871|6889,3,intermediate,Diverse coverage under medium congestion.,47.69
+2021_09_09_23_21_21,350,000771,6853,45.0,5.37,6853|6862|6871|6880|6889,6853|6862|6871|6889,6853|6862|6871|6889,4,intermediate,Consistency with previous decision due to minimal changes in scene and network.,55.7
+2021_09_09_23_21_21,400,000871,6853,45.0,5.25,6853|6862|6871|6880|6889,6853|6871|6889,6853|6889|6871,3,intermediate,Balancing accuracy and bandwidth with complementary views.,40.62
+2021_09_09_23_21_21,450,000971,6889,45.0,5.41,6853|6862|6871|6880|6889,6853|6862|6871|6889,6889|6853|6871,3,intermediate,Maintaining a balance between accuracy and bandwidth usage with complementary views.,123.87
+2021_09_10_12_07_11,200,000471,225,45.0,22.36,207|216|225|234|243,207|225|234,225|207,2,intermediate,Balancing perception accuracy and bandwidth constraints.,50.63

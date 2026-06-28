@@ -1,0 +1,39 @@
+name: opencood
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pip:
+      # PyTorch (CUDA 11.7)
+      - torch==1.13.1
+      - torchvision==0.14.1
+      # Sparse convolution (must match CUDA 11.7)
+      - cumm==0.4.11
+      - cumm-cu117==0.4.11
+      - spconv-cu117==2.3.6
+      - pccm==0.4.16
+      # OpenCOOD
+      - opencoodx==0.1.19
+      - easydict==1.13
+      - einops==0.6.1
+      - timm==0.9.12
+      - tensorboardx==2.6.2.2
+      - shapely==2.0.0
+      - pypcd==0.1.1
+      - pyquaternion==0.9.9
+      - msgpack==1.0.5
+      - addict==2.4.0
+      # LiDAR / vision
+      - open3d==0.17.0
+      - opencv-python-headless==4.13.0.92
+      # Numerics
+      - numpy==1.21.6
+      - scipy==1.7.3
+      - scikit-learn==1.0.2
+      - matplotlib==3.4.2
+      # Utilities
+      - pyyaml==6.0.1
+      - tqdm==4.65.2
+      - ninja==1.11.1.4
+      - cython==3.0.12
+      - setuptools==60.2.0

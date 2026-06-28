@@ -1,0 +1,13 @@
+scenario,frame_idx,frame_name,ego_cav,com_range_m,bandwidth_mbps,all_cavs,in_range_cavs,selected_cavs,n_selected,fusion_method,reason,llm_response_time_s
+2021_08_20_21_10_24,50,000169,2014,45.0,5.49,1996|2005|2014,1996|2005|2014,2014,1,late,,28.55
+2021_08_22_07_52_02,0,000071,3477,45.0,51.99,3477|3486|3495|3504|3513,3477|3486|3495|3504|3513,3477|3513|3486,3,intermediate,Balancing diversity and redundancy under medium congestion.,71.17
+2021_08_22_21_41_24,0,000069,886,45.0,5.43,886|895|904,886|895|904,886,1,late,Low bandwidth and no in-range CAVs.,65.89
+2021_08_22_21_41_24,50,000169,904,45.0,5.44,886|895|904,886|895|904,904|886,2,late,Similar viewpoints and tight bandwidth justify minimal selection and late fusion for continuity.,113.72
+2021_08_23_16_06_26,50,000169,243,45.0,21.99,243|252|261,243|252|261,243|252|261,3,intermediate,Moderate approach with diverse coverage.,32.7
+2021_08_23_16_06_26,100,000269,243,45.0,21.66,243|252|261,243|252|261,243|252|261,3,intermediate,Continuity with diverse coverage under medium congestion.,17.96
+2021_08_23_17_22_47,50,000169,583,45.0,22.54,574|583|592,574|583|592,583,1,late,,21.44
+2021_08_23_21_07_10,50,000169,160,45.0,5.62,160|169|178,160|169|178,160,1,intermediate,Only ego vehicle in range.,33.41
+2021_08_23_21_07_10,100,000269,169,45.0,5.65,160|169|178,160|169|178,169,1,intermediate,,31.47
+2021_08_23_21_47_19,50,000169,225,45.0,5.59,225|234|243,225|234|243,225|243,2,intermediate,Diverse coverage under medium congestion.,28.65
+2021_08_24_07_45_41,50,000170,121,45.0,56.09,121|130|139|148,121|139|148,121|139,2,intermediate,Moderate distance and redundant view.,36.62
+2021_08_24_11_37_54,100,000269,319,45.0,56.31,301|310|319,301|310|319,319|301,2,intermediate,Balancing accuracy and bandwidth with intermediate fusion.,25.99

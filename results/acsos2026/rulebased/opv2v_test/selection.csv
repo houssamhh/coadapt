@@ -1,0 +1,13 @@
+scenario,frame_idx,frame_name,ego_cav,com_range_m,bandwidth_mbps,all_cavs,in_range_cavs,selected_cavs,n_selected,fusion_method,reason,llm_response_time_s
+2021_08_20_21_10_24,50,000169,2014,45.0,5.49,1996|2005|2014,1996|2005|2014,2014|1996|2005,3,late,"Rule-based: bandwidth=5.5 Mbps (tier=low), fusion=late, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_22_07_52_02,0,000071,3477,45.0,51.99,3477|3486|3495|3504|3513,3477|3486|3495|3504|3513,3477|3513|3495|3486|3504,5,intermediate,"Rule-based: bandwidth=52.0 Mbps (tier=high), fusion=intermediate, selected 4 nearest non-ego CAV(s) out of 4 in range.",0.0
+2021_08_22_21_41_24,0,000069,886,45.0,5.43,886|895|904,886|895|904,886|895|904,3,late,"Rule-based: bandwidth=5.4 Mbps (tier=low), fusion=late, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_22_21_41_24,50,000169,904,45.0,5.44,886|895|904,886|895|904,904|886|895,3,late,"Rule-based: bandwidth=5.4 Mbps (tier=low), fusion=late, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_23_16_06_26,50,000169,243,45.0,21.99,243|252|261,243|252|261,243|252|261,3,intermediate,"Rule-based: bandwidth=22.0 Mbps (tier=medium), fusion=intermediate, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_23_16_06_26,100,000269,243,45.0,21.66,243|252|261,243|252|261,243|252|261,3,intermediate,"Rule-based: bandwidth=21.7 Mbps (tier=medium), fusion=intermediate, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_23_17_22_47,50,000169,583,45.0,22.54,574|583|592,574|583|592,583|592|574,3,intermediate,"Rule-based: bandwidth=22.5 Mbps (tier=medium), fusion=intermediate, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_23_21_07_10,50,000169,160,45.0,5.62,160|169|178,160|169|178,160|169|178,3,late,"Rule-based: bandwidth=5.6 Mbps (tier=low), fusion=late, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_23_21_07_10,100,000269,169,45.0,5.65,160|169|178,160|169|178,169|178|160,3,late,"Rule-based: bandwidth=5.7 Mbps (tier=low), fusion=late, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_23_21_47_19,50,000169,225,45.0,5.59,225|234|243,225|234|243,225|234|243,3,late,"Rule-based: bandwidth=5.6 Mbps (tier=low), fusion=late, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_24_07_45_41,50,000170,121,45.0,56.09,121|130|139|148,121|139|148,121|139|148,3,intermediate,"Rule-based: bandwidth=56.1 Mbps (tier=high), fusion=intermediate, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
+2021_08_24_11_37_54,100,000269,319,45.0,56.31,301|310|319,301|310|319,319|301|310,3,intermediate,"Rule-based: bandwidth=56.3 Mbps (tier=high), fusion=intermediate, selected 2 nearest non-ego CAV(s) out of 2 in range.",0.0
