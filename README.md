@@ -78,9 +78,9 @@ opv2v_data_dumping/	# OPV2V datasets
   
   To run CoAdapt, run and enter the container using the following command:
   ```bash
-  $ docker run --rm -it
-  -v "${PWD}/results:/workspace/results"
-  --entrypoint bash
+  $ docker run --rm -it \
+  -v "${PWD}/results:/workspace/results" \
+  --entrypoint bash \
   coadapt
   ```
 
@@ -88,10 +88,10 @@ opv2v_data_dumping/	# OPV2V datasets
 
   If your machine is equipped with an NVIDIA GPU, run the following command so that the container can you use the GPU of the host machine:
   ```bash
-  $ docker run --rm -it
-  -v "${PWD}/results:/workspace/results"
-  --gpus all\
-  --entrypoint bash
+  $ docker run --rm -it \
+  -v "${PWD}/results:/workspace/results" \
+  --gpus all \
+  --entrypoint bash \
   coadapt
   ```
 
