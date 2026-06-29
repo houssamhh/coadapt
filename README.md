@@ -61,10 +61,12 @@ opv2v_data_dumping/	# OPV2V datasets
 ## Installation
 
 	Start by cloning this repository:
-```
+  ```
 	$ git clone https://github.com/houssamhh/coadapt
 	```
+
 	We provide a Docker image for running CoAdapt. Therefore, Docker needs to be installed on your host machine. After installing Docker, you can build the image using the following command:
+
   ```
 	$ docker build -t coadapt .
   ```
@@ -212,6 +214,7 @@ $ python evaluation/plot_comm_cost.py \
 ```
 Replace `<model_name>` with the LLM that you'd like to evaluate (one of: [gemma4, gpt-oss-20b, gpt-oss-120b, llama3.3]). 
 
+```
 For example, to evaluate Gemma 4, run the following command:
 python evaluation/plot_comm_cost.py \
     --eval_csv     results/acsos2026/gemma4/opv2v_train/eval.csv \
@@ -219,5 +222,4 @@ python evaluation/plot_comm_cost.py \
     --baseline_csv results/acsos2026/gemma4/opv2v_train/eval_baseline.csv \
                    results/acsos2026/gemma4/opv2v_test/eval_baseline.csv \
     --output       results/artifact_evaluation/comm_cost_gemma4.png
-```
 ```
