@@ -20,7 +20,7 @@ for model in models:
                 "--dataset_root",
                 f"opv2v_data_dumping/{split}",
                 "--selection_csv",
-                f"results/acsos26/{model}/opv2v_{split}/selection.csv",
+                f"results/acsos2026/{model}/opv2v_{split}/selection.csv",
                 "--all",
                 "--output",
                 f"results/artifact_evaluation/{model}/bev_positions",

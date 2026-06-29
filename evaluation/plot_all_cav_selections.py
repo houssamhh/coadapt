@@ -5,7 +5,7 @@ Script for plotting all CAVs selections for all models
 import subprocess
 import os
 
-models = ["gpt20b", "gpt120b", "gemma4", "llama3.3b"]
+models = ["gpt20b", "gpt120b", "gemma4", "llama3.3"]
 splits = ["train", "test"]
 
 for model in models:
@@ -15,8 +15,8 @@ for model in models:
             "python",
             "evaluation/plot_cav_selection.py",
             "--selection_csv",
-            f"results/acsos26/{model}/opv2v_test/selection.csv",
-            f"results/acsos26/{model}/opv2v_train/selection.csv",
+            f"results/acsos2026/{model}/opv2v_test/selection.csv",
+            f"results/acsos2026/{model}/opv2v_train/selection.csv",
             "--output",
             f"results/artifact_evaluation/cav_selection_{model}.pdf",
         ],
