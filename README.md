@@ -213,8 +213,9 @@ $ python evaluation/plot_comm_cost.py \
     --output       results/artifact_evaluation/comm_cost_<model_name>.png
 ```
 Replace `<model_name>` with the LLM that you'd like to evaluate (one of: [gemma4, gpt-oss-20b, gpt-oss-120b, llama3.3]). 
-```bash
+
 For example, to evaluate Gemma 4, run the following command:
+```bash
 python evaluation/plot_comm_cost.py \
     --eval_csv     results/acsos2026/gemma4/opv2v_train/eval.csv \
                    results/acsos2026/gemma4/opv2v_test/eval.csv \
