@@ -61,15 +61,13 @@ opv2v_data_dumping/	# OPV2V datasets
 ## Installation
 
 	Start by cloning this repository:
-
-	```
+```
 	$ git clone https://github.com/houssamhh/coadapt
 	```
-	
 	We provide a Docker image for running CoAdapt. Therefore, Docker needs to be installed on your host machine. After installing Docker, you can build the image using the following command:
-	```
+  ```
 	$ docker build -t coadapt .
-	```
+  ```
 
 
 ## Using CoAdapt
@@ -86,7 +84,26 @@ opv2v_data_dumping/	# OPV2V datasets
 
   This will mount the `results` directory so that you can see the figures generated.
 
+  If your machine is equipped with an NVIDIA GPU, run the following command so that the container can you use the GPU of the host machine:
+    ```
+  $ docker run --rm -it
+  -v "${PWD}/results:/workspace/results"
+  --gpus all\
+  --entrypoint bash
+  coadapt
+  ```
+
+
   Because OpenCOOD uses Python 3.7 which doesn't support modern LLM libraries and frameworks, we provide two virtual environments: one for running LLM inference, and one for evaluating collaborative perception models in OpenCOOD.
+
+  CoAdapt is built on top of the OpenCOOD library. For this purpose, start first by cloning the OpenCOOD repository:
+  ```
+  $ git clone https://github.com/DerrickXuNu/OpenCOOD
+  ```
+  Then, move the OpenCOOD core components to the current directory:
+  ```
+  $ mv OpenCOOD/opencood .
+```
 
   ### Phase 1: LLM Inference
 
@@ -96,13 +113,14 @@ opv2v_data_dumping/	# OPV2V datasets
   $ conda activate decision_making
   ```
   
-  **Note**: To deploy the LLM locally, you need a HuggingFace token. Then, you can save the token as an environment variable called `HF_TOKEN` (e.g., by using `export HF_TOKEN=<your_token>` in Linux environments). Alternatively, we support using Anthropic cloud-based models. For this purpose, you need an Anthropic API Key, which you can then save in an environment variable called `	ANTHROPIC_API_KEY`.
+  **Note**: To deploy the LLM locally, you need a HuggingFace token. Then, you can save the token as an environment variable called `HF_TOKEN` (e.g., by using `export HF_TOKEN=<your_token>` in Linux environments). Alternatively, we support using Anthropic cloud-based models. For this purpose, you need an Anthropic API Key, which you can then save in an environment variable called `ANTHROPIC_API_KEY`.
   To use a local LLM, e.g., Google's Gemma 3 model, run the following command:
   ```
   $ python coadapt/run_pipeline.py --dataset_root opv2v_data_dumping/test --llm_model google/gemma-3-4b-it --output_dir results/artifact_evaluation --reselect_every 5
   ```
+
  This will run the pipeline on the collaborative perception scenarios found under `opv2v_data_dumping/test`, using the Gemma 3 4B LLM, and save the selection results to the directory `results/artifact_evaluation`. The LLM will choose which robots participate in the fusion process and the fusion strategy every 5 frames (you can modify this variable to select the frequency that you'd like to set). 
- To use cloud-based models, you can run the same command, but by specifying the Claude model that you'd like to use:
+ Alternatively, to use Anthropic models, you can run the same command, but by specifying the Claude model that you'd like to use:
  ```
  $ python coadapt/run_pipeline.py --dataset_root opv2v_data_dumping/test --llm_model claude-sonnet-4-6 --output_dir results/artifact_evaluation --reselect_every 5
  ```
@@ -110,14 +128,7 @@ The results will be saved in a `selection.csv` file, which will contain a list o
 
 ### Phase 2: Running Collaborative Perception Algorithms
 
-After selecting the robots and data fusion process, you can use OpenCOOD the evaluation the performance of data fusion algorithms. For this purpose, start first by cloning the OpenCOOD repository:
-```
-$ git clone https://github.com/DerrickXuNu/OpenCOOD
-```
-Then, move the OpenCOOD code to the current directory:
-```
-$ mv OpenCOOD/opencood .
-```
+
 Activate the OpenCOOD virtual environment:
 
 ```
@@ -127,7 +138,11 @@ $ conda activate opencood
 Then, install OpenCOOD utils:
 ```
 $ cython opencood/utils/box_overlaps.pyx
+```
+```
 $ gcc -shared -fPIC -O2 -I$(python -c "import numpy; print(numpy.get_include())") -I$(python -c "import sysconfig; print(sysconfig.get_path('include'))") opencood/utils/box_overlaps.c -o opencood/utils/box_overlaps.cpython-37m-x86_64-linux-gnu.so
+```
+```
 $ export PYTHONPATH=$(pwd):$PYTHONPATH
 ```
 You can then run the collaborative perception algorithms, based on the LLM's selection:
@@ -154,11 +169,24 @@ To generate plots showing the spatial positions of CoAdapt-selected robots (Figu
 $ python evaluation/plot_all_bev_positions.py
 ```
 
+Note that this requires that the `train` and `test` splits of the OPV2V datasets to be downloaded and place under the `opv2v_data_dumping` directory.
+
+Alternatively, you can generate a figure for a single frame by running the following command:
+
+```
+$ python evaluation/plot_bev_positions.py \
+    --dataset_root opv2v_data_dumping/test \
+    --selection_csv results/acsos2026/gemma4/opv2v_test/selection.csv \
+    --scenario 2021_09_03_09_32_17 \
+    --frame 006220 \
+    --output results/artifact_evaluation/bev_example.pdf
+```
+
 This will generate the results in the `results/artifact_evaluation/<model_name>/bev_positions` directory, with figures showing the positions of robots per selection frame.
 
 To generate plots showing the LLM-selected fusion strategy vs. bandwidth (Figure 6), run the following command
 ```
-$ python evaluation/plot_all_strategy_selections
+$ python evaluation/plot_all_strategy_selections.py
 ```
 
 This will generate the results in the `results/artifact_evaluation/` directory. One file per model will be generated, named `fusion_strategy_<model_name>.pdf`
@@ -182,3 +210,13 @@ $ python evaluation/plot_comm_cost.py \
     --output       results/artifact_evaluation/comm_cost_<model_name>.png
 ```
 Replace `<model_name>` with the LLM that you'd like to evaluate (one of: [gemma4, gpt-oss-20b, gpt-oss-120b, llama3.3]). 
+
+For example, to evaluate Gemma 4, run the following command:
+python evaluation/plot_comm_cost.py \
+    --eval_csv     results/acsos2026/gemma4/opv2v_train/eval.csv \
+                   results/acsos2026/gemma4/opv2v_test/eval.csv \
+    --baseline_csv results/acsos2026/gemma4/opv2v_train/eval_baseline.csv \
+                   results/acsos2026/gemma4/opv2v_test/eval_baseline.csv \
+    --output       results/artifact_evaluation/comm_cost_gemma4.png
+```
+```
