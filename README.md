@@ -85,14 +85,13 @@ opv2v_data_dumping/	# OPV2V datasets
   This will mount the `results` directory so that you can see the figures generated.
 
   If your machine is equipped with an NVIDIA GPU, run the following command so that the container can you use the GPU of the host machine:
-    ```
+  ```
   $ docker run --rm -it
   -v "${PWD}/results:/workspace/results"
   --gpus all\
   --entrypoint bash
   coadapt
   ```
-
 
   Because OpenCOOD uses Python 3.7 which doesn't support modern LLM libraries and frameworks, we provide two virtual environments: one for running LLM inference, and one for evaluating collaborative perception models in OpenCOOD.
 
@@ -103,7 +102,7 @@ opv2v_data_dumping/	# OPV2V datasets
   Then, move the OpenCOOD core components to the current directory:
   ```
   $ mv OpenCOOD/opencood .
-```
+  ```
 
   ### Phase 1: LLM Inference
 
@@ -157,6 +156,8 @@ This will generate an `evaluation.csv` file containing performance metrics relat
 ## Generating Plots
 
 The `evaluation` directory contains the scripts for generating plots found in the paper.
+
+All results and plots used in the paper can be found under the `results/acsos2026` directory.
 
 To generate plots showing the number of robots that participate in the fusion process for each LLM model (Figure 4) in the paper, run the following command:
 ```
