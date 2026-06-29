@@ -60,17 +60,17 @@ opv2v_data_dumping/	# OPV2V datasets
 
 ## Installation
 
-	Start by cloning this repository:
+Start by cloning this repository:
 
-  ```bash
-	$ git clone https://github.com/houssamhh/coadapt
-	```
+```bash
+$ git clone https://github.com/houssamhh/coadapt
+```
 
-	We provide a Docker image for running CoAdapt. Therefore, Docker needs to be installed on your host machine. After installing Docker, you can build the image using the following command:
+We provide a Docker image for running CoAdapt. Therefore, Docker needs to be installed on your host machine. After installing Docker, you can build the image using the following command:
 
-  ```bash
-	$ docker build -t coadapt .
-  ```
+```bash
+$ docker build -t coadapt .
+```
 
 
 ## Using CoAdapt
